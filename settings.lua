@@ -37,4 +37,5 @@ create_color_settings("roboport-construction",{r=0.51171875,g=0.84765625,b=0.214
 create_color_settings("roboport-logistic",{r=1,g=0.53125,b=0,a=0.65})
 
 create_color_settings("turret-range",{ r = 0.05, g = 0.1, b = 0.05, a = 0.15 })
+create_color_settings("turret-range-chart",{r = 0.8, g = 0.25, b = 0.25, a = 1})
 create_color_settings("capsule-range",{ r = 0.05, g = 0.1, b = 0.05, a = 0.15 })
