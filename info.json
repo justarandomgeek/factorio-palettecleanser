@@ -7,5 +7,5 @@
   "homepage": "",
   "contact": "justarandomgeek@gmail.com",
   "description": "Allows adjustment of various overlay colors",
-  "dependencies": ["base"]
+  "dependencies": ["base >= 0.15.11"]
 }
