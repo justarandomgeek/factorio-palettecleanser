@@ -5,6 +5,8 @@ local function create_color_settings(name,defaultcolor)
       name = "palette-cleanser-"..name.."-r",
       setting_type = "startup",
       default_value = defaultcolor.r,
+      minimum_value = 0,
+      maximum_value = 1,
       order="palette-cleanser-"..name.."-1r"
     },
     {
@@ -12,6 +14,8 @@ local function create_color_settings(name,defaultcolor)
       name = "palette-cleanser-"..name.."-g",
       setting_type = "startup",
       default_value = defaultcolor.g,
+      minimum_value = 0,
+      maximum_value = 1,
       order="palette-cleanser-"..name.."-2g"
     },
     {
@@ -19,6 +23,8 @@ local function create_color_settings(name,defaultcolor)
       name = "palette-cleanser-"..name.."-b",
       setting_type = "startup",
       default_value = defaultcolor.b,
+      minimum_value = 0,
+      maximum_value = 1,
       order="palette-cleanser-"..name.."-3b"
     },
     {
@@ -26,6 +32,8 @@ local function create_color_settings(name,defaultcolor)
       name = "palette-cleanser-"..name.."-a",
       setting_type = "startup",
       default_value = defaultcolor.a,
+      minimum_value = 0,
+      maximum_value = 1,
       order="palette-cleanser-"..name.."-4a"
     },
   }
