@@ -1,12 +1,6 @@
 
 local function read_color_settings(name)
-  return
-  {
-    r = settings.startup["palette-cleanser-"..name.."-r"].value,
-    g = settings.startup["palette-cleanser-"..name.."-g"].value,
-    b = settings.startup["palette-cleanser-"..name.."-b"].value,
-    a = settings.startup["palette-cleanser-"..name.."-a"].value
-  }
+  return color(settings.startup["palette-cleanser-"..name].value)
 end
 
 data.raw["utility-constants"].default.turret_range_visualization_color = read_color_settings("turret-range")
@@ -36,3 +30,11 @@ data.raw['electric-pole']['big-electric-pole'].radius_visualisation_picture.tint
 
 data.raw['electric-pole']['substation'].radius_visualisation_picture.filename = "__palettecleanser__/graphics/electric-pole-radius-visualization.png"
 data.raw['electric-pole']['substation'].radius_visualisation_picture.tint = read_color_settings("electric-pole-radius")
+
+if settings.startup["palette-cleanser-signal-wire-mode"].value == "redblue" then
+  -- change green to blue
+  data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/blue-wire.png"
+elseif settings.startup["palette-cleanser-signal-wire-mode"].value == "bluegreen" then 
+  -- change red to blue
+  data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/blue-wire.png"
+end
