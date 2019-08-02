@@ -1,6 +1,6 @@
 
 local function read_color_settings(name)
-  return color(settings.startup["palette-cleanser-"..name].value)
+  return settings.startup["palette-cleanser-"..name].value
 end
 
 data.raw["utility-constants"].default.turret_range_visualization_color = read_color_settings("turret-range")
