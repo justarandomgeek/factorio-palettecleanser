@@ -1,11 +1,11 @@
 {
   "name": "palettecleanser",
-  "version": "0.15.3",
-  "factorio_version": "0.15",
+  "version": "0.17.60",
+  "factorio_version": "0.17",
   "title": "Palette Cleanser",
-  "author": "justarandomgeek",
+  "author": "justarandomgeek (updated by okradonkey)",
   "homepage": "",
   "contact": "justarandomgeek@gmail.com",
   "description": "Allows adjustment of various overlay colors",
-  "dependencies": ["base >= 0.15.11"]
+  "dependencies": ["base >= 0.17.60"]
 }
