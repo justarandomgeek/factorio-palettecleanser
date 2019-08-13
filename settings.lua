@@ -1,34 +1,78 @@
--- local function create_color_settings(name,defaultcolor)
---   data:extend{
---     {
---       type = "string-setting",
---       name = "palette-cleanser-"..name,
---       setting_type = "startup",
---       default_value = defaultcolor,
---       order="palette-cleanser-"..name
---     },
---   }
--- end
+local choices = require("choices") -- choices.lua
 
+data:extend{
+    -- Startup
+    {
+		type = "string-setting",
+		name = "palette-cleanser-color-scheme",
+		setting_type = "startup",
+		default_value = choices.color_scheme.deuteranopia,
+		allowed_values = choices.color_scheme,
+		order = "a",
+	},
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-turret-range",
+        setting_type = "startup",
+        default_value = true,
+        order = "b-a"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-roboport-area",
+        setting_type = "startup",
+        default_value = true,
+        order = "b-b"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-electric-pole-drill",
+        setting_type = "startup",
+        default_value = true,
+        order = "b-c"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-resources-terrain",
+        setting_type = "startup",
+        default_value = true,
+        order = "b-d"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-fluids",
+        setting_type = "startup",
+        default_value = true,
+        order = "c-a"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-ammo",
+        setting_type = "startup",
+        default_value = true,
+        order = "c-b"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-logistics",
+        setting_type = "startup",
+        default_value = true,
+        order = "c-c"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-wires",
+        setting_type = "startup",
+        default_value = true,
+        order = "d-a"
+    },
+    {
+        type = "string-setting",
+        name = "palette-cleanser-signal-wire-mode",
+        setting_type = "startup",
+        default_value = choices.wire_mode.redblue,
+        allowed_values = choices.wire_mode,
+        order="d-b",
+    }
 
--- create_color_settings("pollution","ff000099")
--- create_color_settings("roboport-construction","83d937a6")
--- create_color_settings("roboport-logistic","ff8800a6")
-
--- create_color_settings("turret-range","0d1a0d27")
--- create_color_settings("turret-range-chart","cd3f3fff")
--- create_color_settings("capsule-range","0d1a0d27")
-
--- create_color_settings("mining-drill-radius","4ead9fff")
--- create_color_settings("electric-pole-radius","4ead9fff")
-
--- data:extend{
---   {
---     type = "string-setting",
---     name = "palette-cleanser-signal-wire-mode",
---     setting_type = "startup",
---     default_value = "redgreen",
---     order="palette-cleanser-signal-wire-mode",
---     allowed_values = {"redgreen", "redblue", "bluegreen"}
---   },
--- }
+}
