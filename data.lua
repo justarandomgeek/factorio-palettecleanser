@@ -22,7 +22,6 @@
 -- - Wires (thicker wires, and substitute blue for green)
 --
 -- All color changes are dynamically generated according to the color tables except ammo, logistic chests, inserters, and wires.
--- Roboport service area overlays currently use a colored png, pending a bugfix due in 0.17.65
 
 
 
@@ -56,12 +55,10 @@ end
 
 -- ROBOPORTS
 if settings.startup["palette-cleanser-enable-roboport-area"].value then
-    -- (tint in map view is pending bugfix, due 0.17.65)
-    -- (using colored pngs for now; switch to plain white png plus ting after bugfix)
     data.raw["utility-sprites"].default.logistic_radius_visualization.filename = "__palettecleanser__/graphics/overlay/visualization-logistic-radius.png"
-    -- data.raw["utility-sprites"].default.logistic_radius_visualization.tint = color_schemes[active_scheme].roboport_logistic_range_color
+    data.raw["utility-sprites"].default.logistic_radius_visualization.tint = color_schemes[active_scheme].roboport_logistic_range_color
     data.raw["utility-sprites"].default.construction_radius_visualization.filename = "__palettecleanser__/graphics/overlay/visualization-construction-radius.png"
-    -- data.raw["utility-sprites"].default.construction_radius_visualization.tint = color_schemes[active_scheme].roboport_construction_range_color
+    data.raw["utility-sprites"].default.construction_radius_visualization.tint = color_schemes[active_scheme].roboport_construction_range_color
 end
 
 -- POLLUTION
@@ -233,6 +230,8 @@ if settings.startup["palette-cleanser-enable-logistics"].value then
 end
 
 -- WIRES
+-- Todo: add support for non-thick RGB wires
+
 if settings.startup["palette-cleanser-enable-wires"].value then
     if settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.redblue then
         -- use thicker wires, and substitute blue wire for green wire

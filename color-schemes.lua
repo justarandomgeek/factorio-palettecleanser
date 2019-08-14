@@ -16,10 +16,12 @@ return {
         --------------------
         --------------------
 
-        grenade_range_tint =          {r = 0.10, g = 0.10, b = 0.30, a = 0.15},  -- appears as a light blue circle
-        turret_range_world_color =    {r = 0.10, g = 0.10, b = 0.30, a = 0.15},  -- also appears as a light blue circle
-        turret_range_chart_color =    {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- a more solid-colored blue range overlay for the map
-        artillery_range_chart_color = {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- appears as a very lightly shaded blue circle on the map
+        grenade_range_tint =                {r = 0.10, g = 0.10, b = 0.30, a = 0.15},  -- appears as a light blue circle
+        turret_range_world_color =          {r = 0.10, g = 0.10, b = 0.30, a = 0.15},  -- also appears as a light blue circle
+        turret_range_chart_color =          {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- a more solid-colored blue range overlay for the map
+        artillery_range_chart_color =       {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- appears as a very lightly shaded blue circle on the map
+        roboport_logistic_range_color =     {r = 0.50, g = 0.00, b = 0.50, a = 1.00},  -- magenta
+        roboport_construction_range_color = {r = 0.00, g = 0.50, b = 0.50, a = 1.00},  -- teal
 
         elec_pole_small_area_color =      {r = 0.20, g = 0.35, b = 0.85, a = 0.50},  -- bright green square for active placement, muted green square for already placed poles.
         elec_pole_medium_area_color =     {r = 0.20, g = 0.35, b = 0.85, a = 0.50},
@@ -62,9 +64,8 @@ return {
         turret_range_world_color =          {r = 0.10, g = 0.10, b = 0.30, a = 0.15},  -- also appears as a light blue circle
         turret_range_chart_color =          {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- a more solid-colored blue range overlay for the map
         artillery_range_chart_color =       {r = 0.25, g = 0.25, b = 0.80, a = 1.00},  -- appears as a very lightly shaded blue circle on the map
-        -- Check alpha values on roboports when bugfix hits 0.17.65
-        roboport_logistic_range_color =     {r = 0.50, g = 0.00, b = 0.50, a = 0.50},  -- dark magenta
-        roboport_construction_range_color = {r = 0.00, g = 0.50, b = 0.50, a = 0.50},  -- dark teal
+        roboport_logistic_range_color =     {r = 0.50, g = 0.00, b = 0.50, a = 1.00},  -- magenta
+        roboport_construction_range_color = {r = 0.00, g = 0.50, b = 0.50, a = 1.00},  -- teal
 
         elec_pole_small_area_color =      {r = 0.20, g = 0.35, b = 0.85, a = 0.50},  -- bright green square for active placement, muted green square for already placed poles.
         elec_pole_medium_area_color =     {r = 0.20, g = 0.35, b = 0.85, a = 0.50},
