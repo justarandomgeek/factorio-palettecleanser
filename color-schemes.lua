@@ -33,9 +33,9 @@ return {
         iron_ore_chart_color =   {r = 0.30, g = 0.45, b = 0.75},  -- light blue
         copper_ore_chart_color = {r = 0.70, g = 0.45, b = 0.15},  -- reddish orange
         stone_chart_color =      {r = 0.60, g = 0.60, b = 0.60},  -- granite grey
-        sand_1_chart_color =     {r = 0.35, g = 0.15, b = 0.25},  -- map adds some green to this hue for some reason.  These should be various shades of mid-dark brown
-        sand_2_chart_color =     {r = 0.35, g = 0.10, b = 0.20},
-        sand_3_chart_color =     {r = 0.30, g = 0.15, b = 0.15},
+        sand_1_chart_color =     {r = 0.39, g = 0.34, b = 0.27},  -- These colors are about 10 K-values darker on the CMYK scale than vanilla sand, reversed in order,
+        sand_2_chart_color =     {r = 0.41, g = 0.36, b = 0.28},  --   then adjusted to reduce the resulting greenish tint.  This should help them not stand out so
+        sand_3_chart_color =     {r = 0.43, g = 0.39, b = 0.31},  --   much on dirt/grass maps, while hopefully not looking too out of place on desert maps.
 
         petroleum_gas_base_color = { r = 0.90, g = 0.35, b = 0.60 }, -- pink
         petroleum_gas_flow_color = { r = 0.30, g = 0.10, b = 0.30 }, -- dark purple
