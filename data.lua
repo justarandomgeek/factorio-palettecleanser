@@ -19,7 +19,7 @@
 -- - Fluids (lighter light oil, better pipe/tank colors for several fluids)
 -- - Ammo (explosive shells and cluster grenades)
 -- - Logistics (pink active provider chests, blue requester chests, and pink filter inserters)
--- - Wires (thicker wires, and substitute blue for green)
+-- - Wires (thicker wires, and/or replace red or green with blue)
 --
 -- All color changes are dynamically generated according to the color tables except ammo, logistic chests, inserters, and wires.
 
@@ -230,35 +230,44 @@ if settings.startup["palette-cleanser-enable-logistics"].value then
 end
 
 -- WIRES
--- Todo: add support for non-thick RGB wires
 
-if settings.startup["palette-cleanser-enable-wires"].value then
+if settings.startup["palette-cleanser-enable-thick-wires"].value then
+    data.raw["utility-sprites"].default.copper_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/copper-wire-thick.png"
+    data.raw["utility-sprites"].default.copper_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-copper-wire-thick.png"
     if settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.redblue then
-        -- use thicker wires, and substitute blue wire for green wire
+        -- use thicker wires, and replace green with blue
         data.raw["item"]["green-wire"].icon ="__palettecleanser__/graphics/icons/blue-wire.png"
-        data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/entity/signal-wire/red-wire.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-red-wire.png"
+        data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/entity/signal-wire/red-wire-thick.png"
+        data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-red-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/blue-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-blue-wire-thick.png"
+    elseif settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.bluegreen then
+        -- use thicker wires, and replace red with blue
+        data.raw["item"]["red-wire"].icon ="__palettecleanser__/graphics/icons/blue-wire.png"
+        data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/blue-wire-thick.png"
+        data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-blue-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/green-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-green-wire-thick.png"
+    else -- redgreen
+        -- use thicker wires but don't change colors
+        data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/red-wire-thick.png"
+        data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-red-wire-thick.png"    
+        data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/green-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-green-wire-thick.png"
+    end
+else -- don't use thicker wires
+    if settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.redblue then
+        -- replace green with blue
+        data.raw["item"]["green-wire"].icon ="__palettecleanser__/graphics/icons/blue-wire.png"
         data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/blue-wire.png"
         data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-blue-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/copper-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-copper-wire.png"
     elseif settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.bluegreen then
-        -- use thicker wires, and substitute blue wire for red wire
+        -- replace red with blue
         data.raw["item"]["red-wire"].icon ="__palettecleanser__/graphics/icons/blue-wire.png"
         data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/blue-wire.png"
         data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-blue-wire.png"
-        data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/green-wire.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-green-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/copper-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-copper-wire.png"
     else -- redgreen
-        -- use thicker wires but don't change colors
-        data.raw["utility-sprites"].default.red_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/red-wire.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-red-wire.png"    
-        data.raw["utility-sprites"].default.green_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/green-wire.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-green-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.filename = "__palettecleanser__/graphics/entity/signal-wire/copper-wire.png"
-        data.raw["utility-sprites"].default.copper_wire.hr_version.filename = "__palettecleanser__/graphics/entity/signal-wire/hr-copper-wire.png"
+        -- don't change anything; use vanilla wires
     end
 end
 

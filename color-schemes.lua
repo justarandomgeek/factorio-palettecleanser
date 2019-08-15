@@ -39,7 +39,7 @@ return {
 
         petroleum_gas_base_color = { r = 0.90, g = 0.35, b = 0.60 }, -- pink
         petroleum_gas_flow_color = { r = 0.30, g = 0.10, b = 0.30 }, -- dark purple
-        light_oil_base_color =     { r = 1.00, g = 0.73, b = 0.07 }, -- yellow
+        light_oil_base_color =     { r = 1.00, g = 0.85, b = 0.15 }, -- yellow
         light_oil_flow_color =     { r = 0.57, g = 0.33, b = 0.00 }, -- dark orange
         sulfuric_acid_base_color = { r = 0.85, g = 0.05, b = 0.05 }, -- red
         sulfuric_acid_flow_color = { r = 0.80, g = 0.80, b = 0.00 }, -- yellow

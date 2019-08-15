@@ -61,7 +61,7 @@ data:extend{
     },
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-wires",
+        name = "palette-cleanser-enable-thick-wires",
         setting_type = "startup",
         default_value = true,
         order = "d-a"
