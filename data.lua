@@ -13,7 +13,7 @@
 -- - Roboport areas (magenta and green)
 -- - Electric Pole and Mining Drill areas (lighter blue)
 -- - Resource colors (various)
--- - Terrain colors (darker sand)
+-- - Terrain colors (darker sand and altered cliffs)
 
 -- Item and recipe color enhancements:
 -- - Fluids (lighter light oil, better pipe/tank colors for several fluids)
@@ -85,7 +85,7 @@ if settings.startup["palette-cleanser-enable-electric-pole-drill"].value then
     
 end
 
--- MAP RESOURCE COLORS AND MAP TERRAIN COLORS
+-- MAP RESOURCE COLORS AND TERRAIN COLORS
 if settings.startup["palette-cleanser-enable-resources-terrain"].value then
     data.raw["resource"]["crude-oil"].map_color = color_schemes[active_scheme].crude_oil_chart_color
     data.raw["resource"]["iron-ore"].map_color = color_schemes[active_scheme].iron_ore_chart_color
@@ -94,6 +94,7 @@ if settings.startup["palette-cleanser-enable-resources-terrain"].value then
     data.raw.tile["sand-1"].map_color = color_schemes[active_scheme].sand_1_chart_color
     data.raw.tile["sand-2"].map_color = color_schemes[active_scheme].sand_2_chart_color
     data.raw.tile["sand-3"].map_color = color_schemes[active_scheme].sand_3_chart_color
+    data.raw["cliff"]["cliff"].map_color = color_schemes[active_scheme].cliff_chart_color
     -- Trees are sometimes hard to see on the map.  This may warrant further research and debugging.
     -- data.raw["utility-constants"].default.chart.default_color_by_type["tree"] = {r = 0.25, g = 0.50, b = 0.25, a = 0.35}
 end
