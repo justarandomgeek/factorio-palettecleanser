@@ -95,8 +95,7 @@ if settings.startup["palette-cleanser-enable-resources-terrain"].value then
     data.raw.tile["sand-2"].map_color = color_schemes[active_scheme].sand_2_chart_color
     data.raw.tile["sand-3"].map_color = color_schemes[active_scheme].sand_3_chart_color
     data.raw["cliff"]["cliff"].map_color = color_schemes[active_scheme].cliff_chart_color
-    -- Trees are sometimes hard to see on the map.  This may warrant further research and debugging.
-    -- data.raw["utility-constants"].default.chart.default_color_by_type["tree"] = {r = 0.25, g = 0.50, b = 0.25, a = 0.35}
+    data.raw["utility-constants"].default.chart.default_color_by_type["tree"] = color_schemes[active_scheme].tree_chart_color
 end
 
 

@@ -59,8 +59,9 @@ return {
         sand_2_chart_color =     {r = 0.41, g = 0.36, b = 0.28},  -- soya bean
         sand_3_chart_color =     {r = 0.43, g = 0.39, b = 0.31},  -- coffee
 
-        -- The default cliff color can be terribly hard to distinguish on the map.
-        cliff_chart_color =      {r = 0.30, g = 0.30, b = 0.40, a = 0.80},  -- cornflower blue
+        -- The default cliff and tree colors can be terribly hard to distinguish on the map.
+        cliff_chart_color =      {r = 0.93, g = 0.50, b = 0.75, a = 0.25},  -- illusion red
+        tree_chart_color =       {r = 0.35, g = 0.85, b = 0.35, a = 0.25},  -- pastel green
 
         -- Each fluid has two colors - the base color is used in those little bar graphs in the GUI of refineries, chemical plants, flamethrowers, etc.
         -- Pipes and tanks also have little windows through which you can see the liquids flowing.  The base color is the main liquid color you'll see.
