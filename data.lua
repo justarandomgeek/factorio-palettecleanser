@@ -13,7 +13,7 @@
 -- - Roboport areas (magenta and green)
 -- - Electric Pole and Mining Drill areas (lighter blue)
 -- - Resource colors (various)
--- - Terrain colors (darker sand and altered cliffs)
+-- - Terrain colors (darker sand, more visible cliffs and trees)
 
 -- Item and recipe color enhancements:
 -- - Fluids (lighter light oil, better pipe/tank colors for several fluids)
@@ -22,7 +22,6 @@
 -- - Wires (thicker wires, and/or replace red or green with blue)
 --
 -- All color changes are dynamically generated according to the color tables except ammo, logistic chests, inserters, and wires.
-
 
 
 -- READ MAIN COLOR SCHEME SETTING
@@ -35,6 +34,18 @@ elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_
     active_scheme = "custom"
 end
 
+
+-- Listen for hotkey; run on_event function in control.lua to force map rechart
+data:extend(
+	{
+		{
+			type = "custom-input",
+			name = "palette-cleanser-force-map-rechart",
+			key_sequence = "CONTROL + M",
+			consuming = "script-only"
+		},
+	}
+)
 
 
 -- OVERLAYS

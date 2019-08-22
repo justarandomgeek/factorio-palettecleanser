@@ -1,11 +1,11 @@
 {
   "name": "palettecleanser",
-  "version": "0.17.4",
+  "version": "0.17.5",
   "factorio_version": "0.17",
   "title": "Palette Cleanser",
   "author": "justarandomgeek, okradonkey",
   "homepage": "",
   "contact": "justarandomgeek@gmail.com",
-  "description": "Allows adjustment of various game colors",
+  "description": "Adjusts game colors to accommodate players with color vision deficiency (aka color blindness).",
   "dependencies": ["base"]
 }

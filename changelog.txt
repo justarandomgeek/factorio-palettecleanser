@@ -1,0 +1,24 @@
+v0.17.5
+- Added map colors for cliffs and trees
+- Added separate option for thicker wires for all wire colors
+- Added alpha background to custom icons to preserve alt-mode background shading
+- Added function to automatically rechart map if needed after mod settings changes and mod installation or update
+- Added hotkey to force rechart map (useful for editing color-schemes.lua)
+- Added mod thumbnail for portal and mod GUI
+- Added changelog
+
+v0.17.4
+- Rewritten for 0.17 by okradonkey
+- Added color-schemes.lua configuration file to support palettes and promote color experimentation by advanced users
+- Simplified mod settings
+- Added map colors for vanilla resources
+- Added map colors for sand tiles
+- Added prerendered sprites and icons for filter inserter, active provider chest, requester chest
+- Added prerendered sprites and icons for cluster grenade, explosive cannon shell, and explosive uranium shell
+- Added fluid colors and custom icons for light-oil recipes
+- Added thicker signal wires
+- Removed pollution cloud recolor
+- Changed dependencies to base only
+
+v0.15.3
+- Previous version by justarandomgeek

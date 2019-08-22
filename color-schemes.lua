@@ -107,6 +107,7 @@ return {
         sand_1_chart_color =     {r = 0.39, g = 0.34, b = 0.27},  -- judge grey
         sand_2_chart_color =     {r = 0.41, g = 0.36, b = 0.28},  -- soya bean
         sand_3_chart_color =     {r = 0.43, g = 0.39, b = 0.31},  -- coffee
+
         cliff_chart_color =      {r = 0.30, g = 0.30, b = 0.40, a = 0.80},  -- cornflower blue
         tree_chart_color =       {r = 0.35, g = 0.85, b = 0.35, a = 0.25},  -- pastel green
 
