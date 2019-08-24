@@ -109,7 +109,7 @@ return {
         sand_3_chart_color =     {r = 0.43, g = 0.39, b = 0.31},  -- coffee
 
         cliff_chart_color =      {r = 0.30, g = 0.30, b = 0.40, a = 0.80},  -- cornflower blue
-        tree_chart_color =       {r = 0.35, g = 0.85, b = 0.35, a = 0.25},  -- pastel green
+        tree_chart_color =       {r = 0.35, g = 0.85, b = 0.35, a = 0.26},  -- pastel green
 
         petroleum_gas_base_color = { r = 0.90, g = 0.35, b = 0.60 }, -- dark pink
         petroleum_gas_flow_color = { r = 0.30, g = 0.10, b = 0.30 }, -- blackberry violet

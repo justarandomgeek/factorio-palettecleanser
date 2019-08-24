@@ -1,5 +1,9 @@
 -- DEVELOPMENT PLANS
--- - Add hex color support (stdlib) to make editing color table easier
+-- - Add hex color support (stdlib or util.color) to make editing color table easier
+--     - util.color is built in and handles hex to RGB.
+--     - RGB-decimal to Hex:  string.format("%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
+--     - Would need custom table compare function to account for rounding errors when comparing colors.
+-- - Refactor and tidy code
 -- - Include basic color customization instructions for volunteers on the mod portal FAQ
 
 -- MOD SETTINGS
