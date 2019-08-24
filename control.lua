@@ -3,6 +3,7 @@ require "util" -- for access to the table.compare function
 -- READ MAIN COLOR SCHEME SETTING
 local color_schemes = require('color-schemes')
 local choices = require("choices")
+local color = util.color
 
 
 if settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.deuteranopia then
@@ -34,6 +35,14 @@ end
 --
 -- Advanced users who are directly editing color-schemes.lua should force a rechart by using the hotkey (default Control-M).
 --
+
+local function pccolor(colorname)
+    if not colorname then pccolor = default_color
+    else
+        mycolor = color(color_schemes[active_scheme].[colorname])
+        game.print(colorname..": "..string.format("%02x%02x%02x", mycolor.r * 255, mycolor.g * 255, mycolor.b * 255))
+    end
+end
 
 
 
@@ -75,7 +84,9 @@ end)
 
 
 script.on_event("palette-cleanser-force-map-rechart", function(event) -- keyboard shortcut (default Control-M)
-    rechart()
+    -- hijacking this temporarily
+    --rechart()
+    pccolor("grenade_range_tint")
 end)
 
 

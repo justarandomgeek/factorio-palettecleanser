@@ -4,13 +4,10 @@
 --     - RGB-decimal to Hex:  string.format("%02x%02x%02x", color.r * 255, color.g * 255, color.b * 255)
 --     - Would need custom table compare function to account for rounding errors when comparing colors.
 -- - Refactor and tidy code
--- - Include basic color customization instructions for volunteers on the mod portal FAQ
+-- - Disable roboport overlay tint for Factorio < 0.17.65 (https://forums.factorio.com/74386)
 
--- MOD SETTINGS
--- 1. Dropdown menu: choose color scheme: Protanopia, Deuteranopia, Tritanopia, Custom
--- - Other options will be added when we develop a color scheme for them
--- 2. Checkboxes to enable or disable groups of color changes.
-
+--
+--
 -- OVERVIEW OF COLOR ENHANCEMENTS (AND MOD SETTINGS)
 -- Overlay and map color enhancements:
 -- - Turret and grenade ranges (light blue)
@@ -28,10 +25,15 @@
 -- All color changes are dynamically generated according to the color tables except ammo, logistic chests, inserters, and wires.
 
 
--- READ MAIN COLOR SCHEME SETTING
+
+
 local color_schemes = require('color-schemes')
 local choices = require("choices")
+local color = util.color
+default_color = {0, 0, 0, 1}
 
+-- READ MAIN COLOR SCHEME SETTING
+-- This seems wrong/redundant, but it works for now.
 if settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.deuteranopia then
     active_scheme = "deuteranopia"
 elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.custom then
@@ -54,6 +56,15 @@ data:extend(
 
 -- OVERLAYS
 -- --------
+
+local function pccolor(colorname)
+    if not colorname then pccolor = default_color
+    else
+        mycolor = color(color_schemes[active_scheme].[colorname])
+        game.print("Color: "..string.format("%02x%02x%02x", mycolor.r * 255, mycolor.g * 255, mycolor.b * 255))
+    end
+end
+
 
 
 -- TURRETS AND GRENADES

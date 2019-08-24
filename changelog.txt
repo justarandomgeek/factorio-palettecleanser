@@ -1,24 +1,52 @@
-v0.17.5
-- Added map colors for cliffs and trees
-- Added separate option for thicker wires for all wire colors
-- Added alpha background to custom icons to preserve alt-mode background shading
-- Added function to automatically rechart map if needed after mod settings changes and mod installation or update
-- Added hotkey to force rechart map (useful for editing color-schemes.lua)
-- Added mod thumbnail for portal and mod GUI
-- Added changelog
-
-v0.17.4
-- Rewritten for 0.17 by okradonkey
-- Added color-schemes.lua configuration file to support palettes and promote color experimentation by advanced users
-- Simplified mod settings
-- Added map colors for vanilla resources
-- Added map colors for sand tiles
-- Added prerendered sprites and icons for filter inserter, active provider chest, requester chest
-- Added prerendered sprites and icons for cluster grenade, explosive cannon shell, and explosive uranium shell
-- Added fluid colors and custom icons for light-oil recipes
-- Added thicker signal wires
-- Removed pollution cloud recolor
-- Changed dependencies to base only
-
-v0.15.3
-- Previous version by justarandomgeek
+---------------------------------------------------------------------------------------------------
+Version: 0.17.6
+Date: 2019-08-24
+  Features:
+    - Changed color-schemes color format to hex for easier editing and experimentation
+  Info:
+    - Updated changelog to correct format (https://forums.factorio.com/67140)
+---------------------------------------------------------------------------------------------------
+Version: 0.17.5
+Date: 2019-08-24
+  Features:
+    - Added map colors for cliffs and trees
+    - Added separate option for thicker wires for all wire colors
+  Ease of Use:
+    - Added function to automatically rechart map if needed after mod settings changes and mod
+      installation or update
+    - Added hotkey to force rechart map (useful for editing color-schemes.lua)
+    - Added alpha background to custom icons to preserve alt-mode background shading
+  Other:
+    - Added thumbnail for mod portal and mod GUI
+    - Added basic changelog
+---------------------------------------------------------------------------------------------------
+Version: 0.17.4
+Date: 2019-08-17
+  Features:
+    - Updated Roboport overlay colors in world and on map
+    - Updated turret range color in world and on map
+    - Updated electric pole and mining drill service area colors
+    - Updated option to use blue wire instead of red or green
+    - Added grenade range color
+    - Added map colors for vanilla resources
+    - Added map colors for sand tiles
+    - Added prerendered sprites and icons for filter inserter, active provider chest, requester
+      chest
+    - Added prerendered sprites and icons for cluster grenade, explosive cannon shell, and
+      explosive uranium shell
+    - Added fluid colors and custom icons for light-oil recipes
+    - Added thicker signal wires
+    - Simplified mod settings
+    - Added color-schemes.lua configuration file to support palettes and promote color
+      experimentation by advanced users
+  Info:
+    - Redesigned and expanded for Factorio 0.17 by okradonkey
+    - Dependency reduced to base
+    - Exception: Roboport overlay tint requires base >= 0.17.65
+  Changes:
+    - Removed pollution cloud tint color
+---------------------------------------------------------------------------------------------------
+Version: 0.15.3
+Date: 2017-07-04
+  Info:
+    - Original version by justarandomgeek
