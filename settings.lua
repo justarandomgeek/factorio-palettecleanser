@@ -1,4 +1,13 @@
+-------------
+-- HEADERS --
+-------------
+
 local choices = require("choices") -- choices.lua
+
+
+--------------
+-- SETTINGS --
+--------------
 
 data:extend{
     -- Startup
@@ -12,7 +21,7 @@ data:extend{
 	},
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-turret-range",
+        name = "palette-cleanser-enable-resources-terrain",
         setting_type = "startup",
         default_value = true,
         order = "b-a"
@@ -26,28 +35,28 @@ data:extend{
     },
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-electric-pole-drill",
+        name = "palette-cleanser-enable-turret-range",
         setting_type = "startup",
         default_value = true,
         order = "b-c"
     },
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-resources-terrain",
+        name = "palette-cleanser-enable-electric-pole-drill",
         setting_type = "startup",
         default_value = true,
         order = "b-d"
     },
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-fluids",
+        name = "palette-cleanser-enable-circuits",
         setting_type = "startup",
         default_value = true,
         order = "c-a"
     },
     {
         type = "bool-setting",
-        name = "palette-cleanser-enable-ammo",
+        name = "palette-cleanser-enable-fluids",
         setting_type = "startup",
         default_value = true,
         order = "c-b"
@@ -58,6 +67,13 @@ data:extend{
         setting_type = "startup",
         default_value = true,
         order = "c-c"
+    },
+    {
+        type = "bool-setting",
+        name = "palette-cleanser-enable-ammo",
+        setting_type = "startup",
+        default_value = true,
+        order = "c-d"
     },
     {
         type = "bool-setting",
@@ -72,7 +88,7 @@ data:extend{
         setting_type = "startup",
         default_value = choices.wire_mode.redblue,
         allowed_values = choices.wire_mode,
-        order="d-b",
+        order = "d-b"
     }
 
 }

@@ -1,18 +1,3 @@
-require "util" -- for access to the table.compare function
-
--- READ MAIN COLOR SCHEME SETTING
-local color_schemes = require('color-schemes')
-local choices = require("choices")
-
-
-if settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.deuteranopia then
-    active_scheme = "deuteranopia"
-elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.custom then
-    active_scheme = "custom"
-end
-
-
-
 -- 
 -- WHAT THIS FILE DOES
 -- 
@@ -37,6 +22,28 @@ end
 
 
 
+-------------
+-- HEADERS --
+-------------
+
+require "util" -- for access to the table.compare function
+local color_schemes = require('color-schemes')
+local choices = require("choices")
+
+
+-- READ MAIN COLOR SCHEME SETTING
+if settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.deuteranopia then
+    active_scheme = color_schemes["deuteranopia"]
+elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_scheme.custom then
+    active_scheme = color_schemes["custom"]
+end
+
+
+
+-----------------
+-- RECHART MAP --
+-----------------
+
 local function rechart(msg)
     if not msg then msg = "" end
     game.print("Palette Cleanser: "..tostring(msg).."Recharting map ")
@@ -44,19 +51,21 @@ local function rechart(msg)
     
     -- Store current map color settings in global tables so they can be compared with future settings
     global.old_enable_resources_terrain = settings.startup["palette-cleanser-enable-resources-terrain"].value
-    global.old_crude_oil_chart_color = color_schemes[active_scheme].crude_oil_chart_color
-    global.old_iron_ore_chart_color = color_schemes[active_scheme].iron_ore_chart_color
-    global.old_copper_ore_chart_color = color_schemes[active_scheme].copper_ore_chart_color
-    global.old_stone_chart_color = color_schemes[active_scheme].stone_chart_color
-    global.old_sand_1_chart_color = color_schemes[active_scheme].sand_1_chart_color
-    global.old_sand_2_chart_color = color_schemes[active_scheme].sand_2_chart_color
-    global.old_sand_3_chart_color = color_schemes[active_scheme].sand_3_chart_color
-    global.old_cliff_chart_color = color_schemes[active_scheme].cliff_chart_color
-    global.old_tree_chart_color = color_schemes[active_scheme].tree_chart_color
-    
+    global.old_crude_oil_chart_color = active_scheme.crude_oil_chart_color
+    global.old_iron_ore_chart_color = active_scheme.iron_ore_chart_color
+    global.old_copper_ore_chart_color = active_scheme.copper_ore_chart_color
+    global.old_stone_chart_color = active_scheme.stone_chart_color
+    global.old_sand_1_chart_color = active_scheme.sand_1_chart_color
+    global.old_sand_2_chart_color = active_scheme.sand_2_chart_color
+    global.old_sand_3_chart_color = active_scheme.sand_3_chart_color
+    global.old_cliff_chart_color = active_scheme.cliff_chart_color
+    global.old_tree_chart_color = active_scheme.tree_chart_color 
 end
 
 
+-------------------
+-- SCRIPT EVENTS --
+-------------------
 
 script.on_init(function()
     -- Set up globals to persist map color settings between saves
@@ -72,13 +81,9 @@ script.on_init(function()
     global.old_tree_chart_color = ""
 end)
   
-
-
 script.on_event("palette-cleanser-force-map-rechart", function(event) -- keyboard shortcut (default Control-M)
     rechart()
 end)
-
-
 
 script.on_configuration_changed(function(data)
     --  When this mod is installed or updated, or startup settings were changed, the map might need to be recharted
@@ -119,15 +124,15 @@ script.on_configuration_changed(function(data)
                 needs_rechart = true
             else
                 -- Map colors were already enabled.  Compare current map colors with previous map colors; raise flag if any color changed.
-                if not util.table.compare(color_schemes[active_scheme].crude_oil_chart_color,global.old_crude_oil_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].iron_ore_chart_color,global.old_iron_ore_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].copper_ore_chart_color,global.old_copper_ore_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].stone_chart_color,global.old_stone_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].sand_1_chart_color,global.old_sand_1_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].sand_2_chart_color,global.old_sand_2_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].sand_3_chart_color,global.old_sand_3_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].cliff_chart_color,global.old_cliff_chart_color) then needs_rechart = true end
-                if not util.table.compare(color_schemes[active_scheme].tree_chart_color,global.old_tree_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.crude_oil_chart_color, global.old_crude_oil_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.iron_ore_chart_color, global.old_iron_ore_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.copper_ore_chart_color, global.old_copper_ore_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.stone_chart_color, global.old_stone_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.sand_1_chart_color, global.old_sand_1_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.sand_2_chart_color, global.old_sand_2_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.sand_3_chart_color, global.old_sand_3_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.cliff_chart_color, global.old_cliff_chart_color) then needs_rechart = true end
+                if not util.table.compare(active_scheme.tree_chart_color, global.old_tree_chart_color) then needs_rechart = true end
             end
         else
             if global.old_enable_resources_terrain == true then
