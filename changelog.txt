@@ -1,9 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.17.6
-Date: 2019-08-24
+Date: 2019-08-25
   Features:
-    - Changed color-schemes color format to hex for easier editing and experimentation
-  Info:
+    - Added custom Electronic Circuit, Advanced Circuit, and Processing Unit icons
+  Ease of Use:
+    - Changed color-schemes format to use hex colors for easier editing and experimentation
+  Optimisations:
+    - Cleaned up and optimized code
+  Other:
     - Updated changelog to correct format (https://forums.factorio.com/67140)
 ---------------------------------------------------------------------------------------------------
 Version: 0.17.5
