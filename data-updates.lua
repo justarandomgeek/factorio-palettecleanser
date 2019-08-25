@@ -1,3 +1,7 @@
+-------------
+-- HEADERS --
+-------------
+
 local color_schemes = require('color-schemes')
 local choices = require("choices")
 
@@ -9,6 +13,12 @@ elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_
 end
 
 
+
+---------------------
+-- ITEMS & RECIPES --
+---------------------
+
+-- FLUIDS: barrelling recipe icons
 if settings.startup["palette-cleanser-enable-fluids"].value then
     -- Fix barrel recipes to use our light-oil tint
     -- They're created in base data-updates.lua so we have to fix them here, too.

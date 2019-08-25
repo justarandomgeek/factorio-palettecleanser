@@ -1,3 +1,7 @@
+-------------
+-- HEADERS --
+-------------
+
 local color_schemes = require('color-schemes')
 local choices = require("choices")
 
@@ -11,9 +15,10 @@ elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_
 end
 
 
--- OVERLAYS
--- --------
 
+--------------
+-- OVERLAYS --
+--------------
 
 -- TURRETS AND GRENADES
 if settings.startup["palette-cleanser-enable-turret-range"].value then
@@ -73,12 +78,12 @@ if settings.startup["palette-cleanser-enable-resources-terrain"].value then
 end
 
 
--- ITEMS & RECIPES
--- ---------------
 
+---------------------
+-- ITEMS & RECIPES --
+---------------------
 
 -- FLUIDS
-
 if settings.startup["palette-cleanser-enable-fluids"].value then
     -- Invert and/or adjust some fluid colors so they're easier to identify in pipes and tanks
     data.raw["fluid"]["petroleum-gas"].base_color = active_scheme.petroleum_gas_base_color
@@ -183,12 +188,7 @@ if settings.startup["palette-cleanser-enable-circuits"].value then
 end
 
 -- LOGISTICS
--- For now the following items look better as prerendered png files.  Maybe in the future we can figure out a better way to desaturate/retint these on the fly.
 if settings.startup["palette-cleanser-enable-logistics"].value then
-    -- Active Provider Chest --> pink
-    -- Requester Chest --> deep blue
-    -- Filter inserter --> pink
-
     data.raw["item"]["logistic-chest-active-provider"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
     data.raw["logistic-container"]["logistic-chest-active-provider"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
     data.raw["logistic-container"]["logistic-chest-active-provider"].animation.layers[1].filename =pcgraphics.."/entity/logistic-chest/logistic-chest-active-provider.png"
@@ -209,13 +209,12 @@ if settings.startup["palette-cleanser-enable-logistics"].value then
     data.raw["inserter"]["filter-inserter"].hand_open_picture.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-hand-open.png"
     data.raw["inserter"]["filter-inserter"].platform_picture.sheet.filename =pcgraphics.."/entity/filter-inserter/filter-inserter-platform.png"
     data.raw["inserter"]["filter-inserter"].platform_picture.sheet.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-platform.png"
-    -- Filter-inserter-remnants implementation needs further debugging.  For now, they'll simply turn purple when destroyed. :)
+    -- Filter-inserter-remnants implementation needs further debugging.  For now, they'll magically turn purple when destroyed. :)
     -- data.raw["corpse"]["filter-inserter-remnants"].animation.filename =pcgraphics.."/entity/filter-inserter/remnants/filter-inserter-remnants.png"
     -- data.raw["corpse"]["filter-inserter-remnants"].animation.hr_version.filename =pcgraphics.."/entity/filter-inserter/remnants/hr-filter-inserter-remnants.png"
 end
 
 -- WIRES
-
 if settings.startup["palette-cleanser-enable-thick-wires"].value then
     data.raw["utility-sprites"].default.copper_wire.filename = pcgraphics.."/entity/signal-wire/copper-wire-thick.png"
     data.raw["utility-sprites"].default.copper_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-copper-wire-thick.png"
@@ -257,6 +256,9 @@ else -- don't use thicker wires
 end
 
 
+--------------------
+-- EVENT LISTENER --
+--------------------
 
 -- Listen for hotkey; run on_event function in control.lua to force map rechart
 data:extend(

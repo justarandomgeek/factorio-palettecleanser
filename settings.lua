@@ -1,4 +1,13 @@
+-------------
+-- HEADERS --
+-------------
+
 local choices = require("choices") -- choices.lua
+
+
+--------------
+-- SETTINGS --
+--------------
 
 data:extend{
     -- Startup

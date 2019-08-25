@@ -1,3 +1,7 @@
+------------------
+-- MENU OPTIONS --
+------------------
+
 return {
 	color_scheme = {
         deuteranopia = "Deuteranopia (green deficiency)",

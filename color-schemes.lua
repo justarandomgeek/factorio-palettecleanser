@@ -3,6 +3,9 @@ local color = util.color
 return {
     deuteranopia = {
 
+        -------------------------------
+        -- COLOR SCHEME INSTRUCTIONS --
+        -------------------------------
         --
         -- WELCOME POWER USERS!  If you'd like to try a few new colors, instead of editing this
         --   deuteranopia section, please feel free to edit the Custom section right below this
@@ -49,6 +52,7 @@ return {
         --   color names.
         -- 
 
+        
 
         -- Some of these overlays will appear much lighter than the colors specified here; how
         --   much depends on the particular color.

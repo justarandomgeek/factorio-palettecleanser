@@ -21,6 +21,11 @@
 --
 
 
+
+-------------
+-- HEADERS --
+-------------
+
 require "util" -- for access to the table.compare function
 local color_schemes = require('color-schemes')
 local choices = require("choices")
@@ -34,6 +39,10 @@ elseif settings.startup["palette-cleanser-color-scheme"].value == choices.color_
 end
 
 
+
+-----------------
+-- RECHART MAP --
+-----------------
 
 local function rechart(msg)
     if not msg then msg = "" end
@@ -54,6 +63,9 @@ local function rechart(msg)
 end
 
 
+-------------------
+-- SCRIPT EVENTS --
+-------------------
 
 script.on_init(function()
     -- Set up globals to persist map color settings between saves
@@ -69,13 +81,9 @@ script.on_init(function()
     global.old_tree_chart_color = ""
 end)
   
-
-
 script.on_event("palette-cleanser-force-map-rechart", function(event) -- keyboard shortcut (default Control-M)
     rechart()
 end)
-
-
 
 script.on_configuration_changed(function(data)
     --  When this mod is installed or updated, or startup settings were changed, the map might need to be recharted
